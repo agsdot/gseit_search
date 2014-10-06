@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Display a Google custom site search for Stanford on your site.
+ */
+
+/**
+ * Implements hook_search_info().
+ */
+function ses_search_search_info() {
+  return array(
+    'title' => variable_get('su_search_tab_title','Stanford'),
+    'path' => 'stanford',
+  );
+}
+
+/**
+ * Implements hook_search_execute().
+ */
+function ses_search_search_execute($keys = NULL, $conditions = NULL) {
+  // return no results because we will let Google do our search
+  return array();
+}
+
+/**
+ * Implements hook_search_admin().
+ */
+function ses_search_search_admin() {
+  // add our config variables to Drupal search config page
+  module_load_include('admin.inc', 'ses_search');
+  return _ses_search_admin_settings();
+}
+
+/**
+ * Implements hook_search_access().
+ */
+function ses_search_search_access() {
+    // let everyone search
+    return TRUE;
+}
+
+/**
+ * Implements hook_search_page().
+ */
+function ses_search_search_page($results) {
+      $output['#theme'] = 'ses_search_results';
+      return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ses_search_theme($existing, $type, $theme, $path) {
+  return array(
+    'ses_search_results' => array(
+      'variables' => array(),
+      'template' => 'ses_search_results',
+    ),
+  );
+}

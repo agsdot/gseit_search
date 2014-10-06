@@ -1,0 +1,13 @@
+name = "SES Search"
+description = "Use Google Custom Search to search your site and/or Stanford.edu."
+core = 7.x
+dependencies[] = search
+files[] = ses_search.install
+files[] = ses_search.module
+files[] = ses_search.admin.inc
+files[] = ses_search_results.tpl.php
+scripts[] = ses_search.js
+stylesheets[all][] = ses_search.css
+version = '7.x-1.0'
+package = 'Stanford'
+project = 'ses_search'

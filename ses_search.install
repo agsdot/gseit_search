@@ -1,0 +1,10 @@
+<?php
+
+/* implement hook_install */
+function ses_search_install() {
+}
+
+/* implement hook_uninstall */
+function ses_search_uninstall() {
+}
+

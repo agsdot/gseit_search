@@ -1,13 +1,13 @@
 <?php
 
-    if (!isset($_GET['su_q'])) {
-         $q_path = 'search/stanford/';
-         $q_str = '';
-         if (isset($_GET['q']) && strlen($_GET['q']) > strlen($q_path)) {
-             $q_str = substr($_GET['q'],strlen($q_path));
-         }
-         drupal_goto($q_path.'google',array('query'=>array('su_q'=>$q_str)));
-    }
+//    if (!isset($_GET['su_q'])) {
+//         $q_path = 'search/stanford/';
+//         $q_str = '';
+//         if (isset($_GET['q']) && strlen($_GET['q']) > strlen($q_path)) {
+//             $q_str = substr($_GET['q'],strlen($q_path));
+//         }
+//         drupal_goto($q_path.'google',array('query'=>array('su_q'=>$q_str)));
+//    }
 
     $su_search_all_stanford_link = variable_get('su_search_all_stanford_link',0);
     $su_search_tab_title = variable_get('su_search_tab_title','');

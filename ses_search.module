@@ -12,7 +12,22 @@ function ses_search_search_info() {
   return array(
     'title' => variable_get('su_search_tab_title','Stanford'),
     'path' => 'stanford',
+    'conditions_callback' => '_ses_search_conditions',
   );
+}
+
+function _ses_search_conditions($keys) {
+    // hijack this hook to add the Google Custom Searh parameter onto the Drupal search request URL
+    if (!isset($_GET['su_q'])) {
+         watchdog('search','Referring search for '.$keys.' to Google Custom Search ses_gcs');
+         $q_path = 'search/stanford/';
+         $q_str = '';
+         if (isset($_GET['q']) && strlen($_GET['q']) > strlen($q_path)) {
+             $q_str = substr($_GET['q'],strlen($q_path));
+         }
+         drupal_goto($q_path.'ses_gcs',array('query'=>array('su_q'=>$q_str)));
+    }
+    return array();
 }
 
 /**

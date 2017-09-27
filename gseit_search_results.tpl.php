@@ -20,8 +20,8 @@
         'su_search_google_cse_cx'=>$su_search_google_cse_cx,
     ),'setting');
 
-    drupal_add_js(drupal_get_path('module', 'ses_search') . '/ses_search.js');
-    drupal_add_css(drupal_get_path('module','ses_search') . '/ses_search.css');
+    drupal_add_js(drupal_get_path('module', 'gseit_search') . '/gseit_search.js');
+    drupal_add_css(drupal_get_path('module','gseit_search') . '/gseit_search.css');
 ?>
 
     <div class="stanford-search-block">

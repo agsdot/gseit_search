@@ -8,15 +8,15 @@
 /**
  * Implements hook_search_info().
  */
-function ses_search_search_info() {
+function gseit_search_search_info() {
   return array(
     'title' => variable_get('su_search_tab_title','Stanford'),
     'path' => 'stanford',
-    'conditions_callback' => '_ses_search_conditions',
+    'conditions_callback' => '_gseit_search_conditions',
   );
 }
 
-function _ses_search_conditions($keys) {
+function _gseit_search_conditions($keys) {
     // hijack this hook to add the Google Custom Searh parameter onto the Drupal search request URL
     if (!isset($_GET['su_q'])) {
          watchdog('search','Referring search for '.$keys.' to Google Custom Search ses_gcs');
@@ -25,7 +25,7 @@ function _ses_search_conditions($keys) {
          if (isset($_GET['q']) && strlen($_GET['q']) > strlen($q_path)) {
              $q_str = substr($_GET['q'],strlen($q_path));
          }
-         drupal_goto($q_path.'ses_gcs',array('query'=>array('su_q'=>$q_str)));
+         drupal_goto($q_path.'gse',array('query'=>array('su_q'=>$q_str)));
     }
     return array();
 }
@@ -33,7 +33,7 @@ function _ses_search_conditions($keys) {
 /**
  * Implements hook_search_execute().
  */
-function ses_search_search_execute($keys = NULL, $conditions = NULL) {
+function gseit_search_search_execute($keys = NULL, $conditions = NULL) {
   // return no results because we will let Google do our search
   return array();
 }
@@ -41,16 +41,16 @@ function ses_search_search_execute($keys = NULL, $conditions = NULL) {
 /**
  * Implements hook_search_admin().
  */
-function ses_search_search_admin() {
+function gseit_search_search_admin() {
   // add our config variables to Drupal search config page
-  module_load_include('admin.inc', 'ses_search');
-  return _ses_search_admin_settings();
+  module_load_include('admin.inc', 'gseit_search');
+  return _gseit_search_admin_settings();
 }
 
 /**
  * Implements hook_search_access().
  */
-function ses_search_search_access() {
+function gseit_search_search_access() {
     // let everyone search
     return TRUE;
 }
@@ -58,19 +58,19 @@ function ses_search_search_access() {
 /**
  * Implements hook_search_page().
  */
-function ses_search_search_page($results) {
-      $output['#theme'] = 'ses_search_results';
+function gseit_search_search_page($results) {
+      $output['#theme'] = 'gseit_search_results';
       return $output;
 }
 
 /**
  * Implements hook_theme().
  */
-function ses_search_theme($existing, $type, $theme, $path) {
+function gseit_search_theme($existing, $type, $theme, $path) {
   return array(
-    'ses_search_results' => array(
+    'gseit_search_results' => array(
       'variables' => array(),
-      'template' => 'ses_search_results',
+      'template' => 'gseit_search_results',
     ),
   );
 }

@@ -1,10 +1,10 @@
 <?php
 
 /* implement hook_install */
-function ses_search_install() {
+function gseit_search_install() {
 }
 
 /* implement hook_uninstall */
-function ses_search_uninstall() {
+function gseit_search_uninstall() {
 }
 

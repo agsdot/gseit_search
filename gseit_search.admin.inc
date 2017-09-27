@@ -8,10 +8,10 @@
 /**
  * Admin settings page for the CSE.
  */
-function _ses_search_admin_settings() {
+function _gseit_search_admin_settings() {
   $form = array();
   $form['stanford'] = array(
-    '#title' => t('SES Search'),
+    '#title' => t('GSEIT Search'),
     '#type' => 'fieldset',
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,

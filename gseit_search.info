@@ -1,0 +1,14 @@
+name = "GSEIT Search"
+description = "Use Google Custom Search to search your site and/or Stanford.edu."
+core = 7.x
+dependencies[] = search
+files[] = gseit_search.install
+files[] = gseit_search.module
+files[] = gseit_search.admin.inc
+files[] = gseit_search_results.tpl.php
+scripts[] = gseit_search.js
+stylesheets[all][] = gseit_search.css
+stylesheets[all][] = gseit_search_mods.css
+version = '7.x-1.0'
+package = 'Stanford'
+project = 'gseit_search'

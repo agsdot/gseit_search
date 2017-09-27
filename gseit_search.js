@@ -20,8 +20,7 @@
 
           function myCallback() {
             jQuery("form.gsc-search-box").find("tbody tr input[type='image']").removeClass("gsc-search-button gsc-search-button-v2").parent().removeClass('gsc-search-button').addClass('btn btn-danger');
-            //    jQuery("form.gsc-search-box .gsc-input-box").find("tbody tr input[type='text']").removeClass("gsc-input").removeAttr('placeholder').css('background-image', 'none').css('background-image', 'none');
-            jQuery("form.gsc-search-box .gsc-input-box").find("tbody tr input[type='text']").removeAttr('placeholder').css('background-image', 'none').css('height','1em');
+            jQuery("form.gsc-search-box .gsc-input-box").find("tbody tr input[type='text']").removeAttr('placeholder').css('background-image', 'none');
           }
 
           var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;

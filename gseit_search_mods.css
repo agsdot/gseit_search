@@ -12,7 +12,8 @@
   text-decoration: none;
 }
 form > table.gsc-search-box > tbody > tr > td.btn.btn-danger {
-  padding: 3px 12px;
+  margin-top: 6px;
+  padding: 8px 12px;
   border: none;
   background-color: #8c1515;
 }
@@ -25,9 +26,26 @@ div.gsc-wrapper > div.gsc-resultsbox-visible div.gs-image-box {
 #block-system-main > div.stanford-search-block > div > div.stanford-search-all-stanford {
   margin-right: 75px;
 }
-div.gs-webResult.gs-result > div.gsc-thumbnail-inside,
-div.gs-webResult.gs-result > div.gsc-url-top {
+div.gs-webResult.gs-result .gsc-thumbnail-inside,
+div.gs-webResult.gs-result .gsc-url-top {
   padding-left: 0;
+}
+div.gs-webResult.gs-result .gsc-table-cell-thumbnail,
+div.gs-webResult.gs-result .gsc-thumbnail {
+  display: none;
+}
+table.gsc-search-box > tbody,
+div.gs-webResult.gs-result > table > tbody {
+  /*border: 2px solid white;*/
+  border: hidden;
+}
+.stanford-search-block .gsc-input-box,
+.stanford-search-block .gsc-input-box table {
+  height: 40px;
+  /*border: none;*/
+}
+.stanford-search-block .gsc-input-box .gsib_a {
+  border-right: hidden;
 }
 /* temporarily get rid of ads */
 div.gsc-wrapper > div.gsc-adBlock {
